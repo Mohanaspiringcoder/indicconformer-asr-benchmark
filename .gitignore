@@ -3,9 +3,6 @@
 __pycache__/
 *.py[cod]
 
-# Jupyter Notebook
-.ipynb_checkpoints/
-
 # Virtual Environments
 venv/
 .venv/
@@ -18,9 +15,6 @@ hf_token.txt
 # Operating System
 .DS_Store
 Thumbs.db
-
-# VS Code
-.vscode/
 
 # Temporary Files
 *.log
