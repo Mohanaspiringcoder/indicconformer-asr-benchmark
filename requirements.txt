@@ -1,0 +1,12 @@
+
+
+transformers
+datasets
+huggingface_hub
+torch
+torchaudio
+pandas
+jiwer
+tqdm
+onnx
+onnxruntime==1.20.1

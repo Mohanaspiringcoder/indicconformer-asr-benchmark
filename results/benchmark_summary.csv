@@ -1,0 +1,10 @@
+language,model_name,decoder,dataset,split,num_samples,avg_wer,avg_inference_time_sec
+Hindi,ai4bharat/indic-conformer-600m-multilingual,rnnt,ai4bharat/kathbath,valid,100,0.0765,2.0797
+Telugu,ai4bharat/indic-conformer-600m-multilingual,rnnt,ai4bharat/kathbath,valid,100,0.2209,2.8344
+Tamil,ai4bharat/indic-conformer-600m-multilingual,rnnt,ai4bharat/kathbath,valid,100,0.1924,2.5377
+Malayalam,ai4bharat/indic-conformer-600m-multilingual,rnnt,ai4bharat/kathbath,valid,100,0.315,4.0947
+Kannada,ai4bharat/indic-conformer-600m-multilingual,rnnt,ai4bharat/kathbath,valid,100,0.1312,3.0097
+Punjabi,ai4bharat/indic-conformer-600m-multilingual,rnnt,ai4bharat/kathbath,valid,100,0.0936,1.9846
+Gujarati,ai4bharat/indic-conformer-600m-multilingual,rnnt,ai4bharat/kathbath,valid,100,0.0988,2.6566
+Bengali,ai4bharat/indic-conformer-600m-multilingual,rnnt,ai4bharat/kathbath,valid,100,0.0968,2.5469
+Marathi,ai4bharat/indic-conformer-600m-multilingual,rnnt,ai4bharat/kathbath,valid,100,0.0958,2.5704
