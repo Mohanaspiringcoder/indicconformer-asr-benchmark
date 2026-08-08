@@ -197,31 +197,6 @@ Screenshots of the CPU and T4 GPU benchmark runs are available in the `screensho
 
 ---
 
-## Project Structure
-
-indicconformer-asr-benchmark/
-│
-├── notebooks/
-│   └── IndicConformer_ASR_Benchmark.ipynb
-│
-├── results/
-│   ├── benchmark_summary.csv
-│   └── benchmark_details.csv
-│
-├── screenshots/
-│   ├── model_loaded_successfully.png
-│   ├── benchmark_running.png
-│   ├── benchmark_details_on_cpu.png
-│   ├── benchmark_summary_on_cpu.png
-│   └── benchmark_summary_on_t4_gpu.png
-│
-├── .gitignore
-├── README.md
-└── requirements.txt
-
-
----
-
 ## Limitations
 
 This benchmark is intentionally small and should be considered a baseline evaluation rather than a comprehensive assessment of IndicConformer's performance.
