@@ -211,6 +211,20 @@ The benchmark was run on 9 Indian languages with 100 validation samples per lang
 
 Lower WER indicates better ASR performance.
 
+### WER Comparison
+
+![IndicConformer Average WER by Language](images/indicconformer_wer_by_language.png)
+
+### Observations
+
+- **Hindi achieved the lowest average WER (7.65%)** among the evaluated languages.
+- **Malayalam had the highest average WER (31.50%)** in this benchmark.
+- Telugu (22.09%) and Tamil (19.24%) also showed noticeably higher WER compared with Hindi and several other evaluated languages.
+- Punjabi, Gujarati, Bengali and Marathi produced relatively lower WER values in this evaluation.
+- These differences show that ASR performance can vary substantially across languages even when the same multilingual model and evaluation procedure are used.
+- The results should not be interpreted as a definitive language ranking because the benchmark uses only 100 validation samples per language.
+
+
 In this benchmark, Hindi produced the lowest average WER, while Malayalam produced the highest average WER among the evaluated languages.
 
 These results should be treated as an initial benchmark rather than a definitive evaluation of IndicConformer because only 100 samples were evaluated per language.
@@ -221,13 +235,16 @@ These results should be treated as an initial benchmark rather than a definitive
 
 The benchmark was executed in Google Colab using both CPU and NVIDIA T4 GPU environments.
 
-The T4 GPU showed noticeably lower inference latency compared with CPU execution.
+The NVIDIA T4 GPU showed noticeably lower inference latency than CPU execution for the benchmark workload, demonstrating the practical benefit of hardware acceleration for a 600M-parameter ASR model.
 
-This demonstrates the practical impact of hardware acceleration when running a relatively large 600M-parameter ASR model.
+### What this comparison shows
 
-Screenshots of the CPU and T4 GPU benchmark runs are available in the `screenshots/` directory.
+- GPU acceleration can significantly reduce inference latency for the same ASR model.
+- A 600M-parameter model can be computationally demanding for CPU inference.
+- Inference performance depends on both model size and available hardware.
+- GPU measurements are useful when considering future deployment and serving optimizations.
 
-> Note: The latency difference depends on the Google Colab runtime, hardware availability, audio duration, model initialization, and system load. Therefore, these measurements should not be treated as universal hardware benchmarks.
+> **Important:** These measurements were collected using Google Colab and should not be treated as universal hardware benchmarks. Runtime performance can vary based on CPU/GPU availability, audio duration, model initialization, and system load.
 
 
 ---
