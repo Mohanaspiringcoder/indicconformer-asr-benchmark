@@ -331,23 +331,6 @@ These conditions would be important for evaluating robustness in more realistic 
 
 ---
 
-## What I Would Improve
-
-If I continue developing this benchmark, I would focus on the following improvements:
-
-- Increase the evaluation set from 100 samples to 500–1,000+ samples per language
-- Evaluate all 22 languages supported by IndicConformer
-- Implement more robust language-specific text normalization
-- Perform detailed substitution, deletion, and insertion analysis
-- Compare IndicConformer with other ASR models using the same dataset
-- Measure inference latency more systematically
-- Measure throughput and memory usage
-- Evaluate long-form and noisy speech
-- Explore batch inference and real-time inference
-- Investigate model optimization and quantization
-
----
-
 ## Reproducibility
 
 The repository contains:
@@ -368,21 +351,92 @@ The notebook can be opened in Google Colab and executed using a Hugging Face acc
 
 ---
 
-## Future Work
+## Future Improvements
 
-The next stage of this project could extend the benchmark into a more comprehensive multilingual ASR evaluation framework.
+The current benchmark is intentionally lightweight. The next stage would focus on improving evaluation depth, robustness, performance measurement, and deployment readiness.
 
-Possible directions include:
+### 1. Expand the Evaluation Dataset
 
-- Benchmarking all 22 supported Indic languages
-- Comparing multiple ASR models
-- Larger evaluation datasets
-- Detailed ASR error analysis
-- Real-time inference benchmarking
-- GPU/CPU throughput comparison
-- Long-form speech evaluation
-- Noisy speech evaluation
-- Model optimization and deployment
+- Increase the evaluation set from 100 samples to 500–1,000+ samples per language.
+- Evaluate a broader range of speakers and audio conditions.
+- Extend the benchmark to all 22 languages supported by IndicConformer.
+
+### 2. Improve ASR Error Analysis
+
+Move beyond a single WER value by analyzing:
+
+- Substitutions
+- Deletions
+- Insertions
+- Language-specific normalization effects
+- Speaker and accent variation
+
+This would help identify why recognition errors occur rather than only measuring how many errors occurred.
+
+### 3. Compare Against Other ASR Models
+
+Run the same dataset and evaluation pipeline against additional ASR models, such as Whisper, to make the comparison more meaningful.
+
+The comparison should use the same:
+
+- Audio samples
+- Preprocessing
+- Text normalization
+- Evaluation metrics
+
+### 4. Evaluate Robustness
+
+Extend the benchmark to more realistic speech conditions:
+
+- Noisy audio
+- Long-form speech
+- Code-switched speech
+- Different speaking rates
+- Different speaker characteristics
+
+### 5. Measure Inference Performance More Systematically
+
+Move beyond basic CPU vs GPU latency comparisons and measure:
+
+- Average latency
+- p50 latency
+- p95 latency
+- Throughput
+- Requests per second
+- GPU memory usage
+- Batch-size impact
+- Real-Time Factor (RTF)
+
+### 6. Model Optimization
+
+Investigate techniques such as:
+
+- Batch inference
+- Model quantization
+- Memory optimization
+- Inference optimization
+
+The goal would be to understand the trade-off between recognition quality, latency, memory usage, and throughput.
+
+### 7. NVIDIA Triton Deployment
+
+As a later engineering stage, deploy IndicConformer through NVIDIA Triton and compare direct model inference with served inference.
+
+A possible serving architecture would be:
+
+Client
+↓
+Inference API
+↓
+NVIDIA Triton Inference Server
+↓
+IndicConformer
+↓
+RNNT Decoding
+↓
+Transcript
+
+The deployment benchmark would focus on latency, throughput, concurrency, GPU memory usage, and batch-size behavior.
 
 ---
 
