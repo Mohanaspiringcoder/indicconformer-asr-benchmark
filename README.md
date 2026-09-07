@@ -2,9 +2,38 @@
 
 # IndicConformer ASR Benchmark
 
-Benchmarking AI4Bharat's IndicConformer-600M multilingual Automatic Speech Recognition (ASR) model across major Indian languages using the AI4Bharat Kathbath dataset.
+Benchmarking **AI4Bharat IndicConformer-600M** for multilingual Automatic Speech Recognition (ASR) across **9 Indian languages using 900 audio samples** from the **Kathbath validation dataset**.
 
-The goal of this project is simple: take a publicly available multilingual ASR model, evaluate it on real speech data, measure its Word Error Rate (WER), and understand how its performance changes across languages and hardware.
+The benchmark evaluates **Word Error Rate (WER)** using **RNNT decoding** and compares inference behavior across **CPU and NVIDIA T4 GPU** environments.
+
+### Key Highlights
+
+- **Model:** AI4Bharat IndicConformer-600M
+- **Dataset:** AI4Bharat Kathbath (`valid` split)
+- **Languages:** 9 Indian languages
+- **Samples:** 900 audio samples (100 per language)
+- **Decoding:** RNNT
+- **Evaluation Metric:** Word Error Rate (WER)
+- **Hardware:** Google Colab CPU and NVIDIA T4 GPU
+
+### Benchmark Results
+
+| Language | Samples | Average WER |
+|---|---:|---:|
+| Hindi | 100 | 7.65% |
+| Telugu | 100 | 22.09% |
+| Tamil | 100 | 19.24% |
+| Malayalam | 100 | 31.50% |
+| Kannada | 100 | 13.12% |
+| Punjabi | 100 | 9.36% |
+| Gujarati | 100 | 9.88% |
+| Bengali | 100 | 9.68% |
+| Marathi | 100 | 9.58% |
+
+**Best average WER:** Hindi — **7.65%**  
+**Highest average WER:** Malayalam — **31.50%**
+
+> **Note:** This is a lightweight benchmark using 100 validation samples per language. The results should be treated as an initial evaluation rather than a definitive assessment of IndicConformer's overall performance.
 
 ---
 
