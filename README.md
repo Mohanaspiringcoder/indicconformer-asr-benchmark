@@ -30,6 +30,12 @@ The benchmark evaluates **Word Error Rate (WER)** using **RNNT decoding** and co
 | Bengali | 100 | 9.68% |
 | Marathi | 100 | 9.58% |
 
+## Architecture
+
+The benchmark follows a simple evaluation pipeline from audio preprocessing through ASR inference and WER calculation.
+
+![IndicConformer ASR Benchmark Architecture](images/architecture.png)
+
 **Best average WER:** Hindi — **7.65%**  
 **Highest average WER:** Malayalam — **31.50%**
 
