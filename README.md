@@ -253,45 +253,81 @@ The NVIDIA T4 GPU showed noticeably lower inference latency than CPU execution f
 
 This benchmark is intentionally small and should be considered a baseline evaluation rather than a comprehensive assessment of IndicConformer's performance.
 
-### 1. Limited sample size
+### 1. Limited Evaluation Size
 
-Only 100 samples were evaluated for each language.
+Only 100 samples were evaluated for each language, giving a total of 900 audio samples.
 
-A larger evaluation set would provide more statistically reliable results.
+A larger and more diverse evaluation set would provide more reliable estimates of language-level performance.
 
-### 2. Limited language coverage
+### 2. Limited Language Coverage
 
-IndicConformer supports 22 Indian languages, while this benchmark evaluates only 9 languages.
+IndicConformer supports 22 Indian languages, while this benchmark evaluates only 9 languages:
 
-### 3. Validation split
+- Hindi
+- Telugu
+- Tamil
+- Malayalam
+- Kannada
+- Punjabi
+- Gujarati
+- Bengali
+- Marathi
+
+The current results therefore do not represent the model's performance across all supported languages.
+
+### 3. Validation Split
 
 The experiment uses the Kathbath `valid` split and is not intended to reproduce the official evaluation methodology used by the model authors.
 
-### 4. Limited error analysis
+The benchmark is designed primarily for a consistent, lightweight comparison across the selected languages.
 
-The current benchmark focuses primarily on WER.
+### 4. Limited Error Analysis
 
-It does not yet provide a detailed analysis of:
+The current evaluation focuses primarily on overall Word Error Rate (WER).
 
-- substitutions
-- deletions
-- insertions
-- accents
-- background noise
-- speaker characteristics
-- speaking rate
+It does not yet provide detailed analysis of:
 
-### 5. Hardware variability
+- Substitutions
+- Deletions
+- Insertions
+- Accents
+- Background noise
+- Speaker characteristics
+- Speaking rate
 
-CPU and T4 GPU measurements were collected using Google Colab.
+Breaking WER into these error categories would provide better insight into where recognition errors occur.
 
-Runtime performance can vary depending on the available hardware and system conditions.
-
-### 6. Text normalization
+### 5. Text Normalization
 
 WER can be affected by punctuation, whitespace, Unicode representation, and language-specific text normalization.
 
-A more rigorous language-aware normalization pipeline would make cross-language comparisons more reliable.
+More rigorous language-aware normalization would make cross-language comparisons more reliable.
+
+### 6. Hardware and Latency Variability
+
+CPU and NVIDIA T4 measurements were collected using Google Colab.
+
+Inference latency can vary depending on:
+
+- Available hardware
+- Audio duration
+- Model initialization
+- Runtime conditions
+- System load
+
+Therefore, the current latency observations should not be treated as universal hardware benchmarks.
+
+### 7. Noisy and Code-Switched Speech
+
+The current benchmark does not specifically evaluate:
+
+- Noisy speech
+- Code-switched speech
+- Long-form conversational speech
+
+These conditions would be important for evaluating robustness in more realistic deployment scenarios.
+
+> **Overall:** The current benchmark is best viewed as a reproducible baseline for comparing IndicConformer performance across a selected set of Indian languages, rather than as a definitive model evaluation.
 
 ---
 
